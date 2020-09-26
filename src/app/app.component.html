@@ -1,5 +1,8 @@
+<!-- UI method for displaying current question and wether its the last question -->
 <div class="quiz" *ngIf="quiz">
+  <!-- Loops through remaining questions if not at end with !showResults -->
   <div class="questions" *ngIf="!showResults">
+    <!-- If false shows current new question with ability to choose an answer -->
     <app-question-form
       [question]="quiz.questions[currentQuestionIndex]"
       (onChoiceMade)="updateChoice($event)"
